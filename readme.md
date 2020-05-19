@@ -18,19 +18,11 @@ Quản lý phòng khám (phòng mạch tư) là đồ án môn "Nhập môn côn
 - Xem báo cáo thống kê doanh thu theo từng ngày, tháng.
 - Xem báo cáo thống kê sử dụng thuốc theo từng ngày, tháng.
 - Quản lý các quy định như: số bệnh nhân tối đa khám trong 1 ngày, số tiền khám niêm yết.
-- Ngoài ra trang chủ còn hiển thị các thông tin hữu ích cho phòng khám như: 
-  + Số bệnh nhân đã khám, số phiếu khám, doanh thu trong tháng hiện tại.
-  + Biểu đồ doanh thu 7 ngày gần nhất.
-  + Loại thuốc được sử dụng nhiều nhất trong tháng.
-  + Loại thuốc có số lượng nhiều nhất trong tháng.
-
-## About Us
-
-- GVHD: Đỗ Thị Thanh Tuyền
-- Lộc Nguyễn - 16520678 - <a href="http://fb.com/vanloctech" target="_blank">fb.com/vanloctech</a>
-- Cao Luyện - 16520713 - <a href="http://fb.com/luyen2k2" target="_blank">fb.com/luyen2k2</a>
-- Phúc Nguyễn - 16520952 - <a href="http://fb.com/PhucNguyen.k11UIT" target="_blank">fb.com/PhucNguyen.k11UIT</a>
-- Hồng Ánh - 16521489 - <a href="http://fb.com/honganhtd" target="_blank">fb.com/honganhtd</a><br/>
+- Ngoài ra trang chủ còn hiển thị các thông tin hữu ích cho phòng khám như:
+  - Số bệnh nhân đã khám, số phiếu khám, doanh thu trong tháng hiện tại.
+  - Biểu đồ doanh thu 7 ngày gần nhất.
+  - Loại thuốc được sử dụng nhiều nhất trong tháng.
+  - Loại thuốc có số lượng nhiều nhất trong tháng.
 
 ## References
 
@@ -38,12 +30,3 @@ Quản lý phòng khám (phòng mạch tư) là đồ án môn "Nhập môn côn
 - **[Bootstrap 3.3](https://getbootstrap.com/docs/3.3/)**
 - **[Some documents and slide of teacher ĐTTT](fb.com/vanloctech)**
 - **[Some documents find on Google](https://google.com.vn)**
-
-## Contributing
-
-Mọi đóng góp cải thiện phần mềm chúng tôi xin ghi nhận. Hãy giúp chúng tôi cải thiện và phát triển ứng dụng hơn nữa.
-(Contact: vanloctech@gmail.com)
-
-## License
-
-Copyright 2018 - QuanLyPhongKham by Group CNPM (UIT)
