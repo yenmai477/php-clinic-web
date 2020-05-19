@@ -1,4 +1,4 @@
-<p align="center"><img src="https://watchdogalarms.com.au/wp-content/uploads/2015/12/icon-school.png" width="128" height="128"></p>
+
 
 <p align="center">
 Project by Subject "Introduction Software Technology"
