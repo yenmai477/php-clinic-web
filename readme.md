@@ -1,5 +1,3 @@
-
-
 <p align="center">
 Project by Subject "Introduction Software Technology"
 </p>
@@ -23,10 +21,3 @@ Quản lý phòng khám (phòng mạch tư) là đồ án môn "Nhập môn côn
   - Biểu đồ doanh thu 7 ngày gần nhất.
   - Loại thuốc được sử dụng nhiều nhất trong tháng.
   - Loại thuốc có số lượng nhiều nhất trong tháng.
-
-## References
-
-- **[Laravel 5.5](https://laravel.com/docs/5.5)**
-- **[Bootstrap 3.3](https://getbootstrap.com/docs/3.3/)**
-- **[Some documents and slide of teacher ĐTTT](fb.com/vanloctech)**
-- **[Some documents find on Google](https://google.com.vn)**
