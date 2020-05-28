@@ -87,12 +87,12 @@
                 <td>{{$detail->NamSinh}}</td>
                 <td>{{$detail->DiaChi}}</td>
                 <td>
-                  <a class="btn btn-primary btn-rounded mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route("sua-benhnhan.get",[$detail->MaBN])}}"><i class="mdi mdi-pencil font-size-18"></i></a>
-                  <a href="javascript:void(0);" onclick="del({{$detail->MaBN}})" class="btn btn-danger btn-rounded" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-close font-size-18"></i></a>
-                  <!-- <a href="{{route("sua-benhnhan.get",[$detail->MaBN])}}" class="btn btn-warning waves-light waves-effect btn-rounded" title="Sửa"><i class="fas fa-pencil-alt"></i></a>
+                  <!-- <a class="btn btn-primary btn-rounded mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route("sua-benhnhan.get",[$detail->MaBN])}}"><i class="mdi mdi-pencil font-size-18"></i></a> -->
+                  <!-- <a href="javascript:void(0);" onclick="del({{$detail->MaBN}})" class="btn btn-danger btn-rounded" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-close font-size-18"></i></a> -->
+                  <a href="{{route("sua-benhnhan.get",[$detail->MaBN])}}" class="btn btn-warning waves-light waves-effect" title="Sửa"><i class="fas fa-pencil-alt"></i></a>
                   &nbsp;
-                  &nbsp; -->
-                  <!-- <a onclick="del({{$detail->MaBN}})" class="btn btn-danger waves-light waves-effect btn-rounded" title="Xóa"> <i class="fas fa-trash-alt" style="color:white"></i></a> -->
+                  &nbsp;
+                  <a onclick="del({{$detail->MaBN}})" class="btn btn-danger waves-light waves-effect " title="Xóa"> <i class="fas fa-trash-alt" style="color:white"></i></a>
 
                 </td>
               </tr>
@@ -153,6 +153,8 @@
   $(document).ready(function() {
     $('#datatable-responsive').DataTable({
       "language": {
+        "sInfo": "Dòng _START_ đến  _END_ trong tổng  _TOTAL_ dòng",
+        "sLengthMenu": "Hiển thị _MENU_ dòng",
         "paginate": {
           "previous": "<",
           "next": ">"

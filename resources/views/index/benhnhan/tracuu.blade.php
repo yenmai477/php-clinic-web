@@ -69,7 +69,7 @@
                 <label>Ngày khám</label><br>
                 <!-- <input class="input-small datepicker hasDatepicker" id="ngaykham" type="date" name="ngaykham"> &#160; -->
                 <div class="input-group">
-                  <input type="text" class="form-control" autocomplete="off" placeholder="mm/dd/yyyy" data-provide="datepicker" data-date-autoclose="true" id="ngaykham" type="date" name="ngaykham">
+                  <input type="text" class="form-control datepicker-vi" autocomplete="off" placeholder="dd/mm/yyyy" data-provide="datepicker" data-date-autoclose="true" id="ngaykham" type="date" name="ngaykham">
                   <div class="input-group-append">
                     <button class="btn btn-primary" onclick="xoangay()"><i class="mdi mdi-calendar"></i></button>
                   </div>
@@ -193,7 +193,7 @@
           data: {
             //                        "_token": token,
             "hoten": hoten,
-            "ngay": ngay.replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$1-$2"),
+            "ngay": ngay.replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$2-$1"),
             "trieuchung": trieuchung,
             "loaibenh": loaibenh
           },
@@ -210,4 +210,6 @@
       }
     }
   </script>
+
+
   @endsection

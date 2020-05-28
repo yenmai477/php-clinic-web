@@ -16,7 +16,7 @@
   <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
   <link href="assets/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
   <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  <link rel="stylesheet" href="assets/libs/jquery/jquery-confirm.min.css">
   <link rel="stylesheet" type="text/css" href="assets/libs/toastr/build/toastr.min.css">
 
   <!-- DataTables -->
@@ -111,7 +111,6 @@
 
 
     <script src="assets/libs/select2/js/select2.min.js"></script>
-    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="assets/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
     <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 
@@ -128,6 +127,24 @@
     <script src="assets/js/app.js"></script>
 
 
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+      $.fn.datepicker.dates['vi'] = {
+        days: ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"],
+        daysShort: ["CN", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
+        daysMin: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+        months: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+        monthsShort: ["Th1", "Th2", "Th3", "Th4", "Th5", "Th6", "Th7", "Th8", "Th9", "Th10", "Th11", "Th12"],
+        today: "Hôm nay",
+        clear: "Xóa",
+        format: "dd/mm/yyyy"
+      }
+      $('.datepicker-vi').datepicker({
+        language: 'vi',
+        format: 'mm/dd/yyyy',
+      });
+    </script>
 
 
     @yield('script')

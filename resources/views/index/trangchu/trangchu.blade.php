@@ -12,23 +12,6 @@
 @endsection
 @section('content')
 
-@if (count($errors) > 0 || session('error'))
-<div class="alert alert-danger" role="alert">
-  <strong>Cảnh báo!</strong><br>
-  @foreach($errors->all() as $err)
-  {{$err}}<br />
-  @endforeach
-  {{session('error')}}
-</div>
-@endif
-@if (session('success'))
-<div class="alert alert-success">
-  <strong>Thành công!</strong>
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <br />
-  {{session('success')}}
-</div>
-@endif
 <!-- start page title -->
 <div class="row">
   <div class="col-12">
@@ -46,6 +29,25 @@
     </div>
   </div>
 </div>
+
+@if (count($errors) > 0 || session('error'))
+<div class="alert alert-danger" role="alert">
+  <strong>Cảnh báo!</strong><br>
+  @foreach($errors->all() as $err)
+  {{$err}}<br />
+  @endforeach
+  {{session('error')}}
+</div>
+@endif
+@if (session('success'))
+<div class="alert alert-success">
+  <strong>Thành công!</strong>
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <br />
+  {{session('success')}}
+</div>
+@endif
+
 <!-- end page title -->
 
 <div class="row">
