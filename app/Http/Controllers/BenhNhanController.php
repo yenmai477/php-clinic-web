@@ -188,7 +188,7 @@ class BenhNhanController extends Controller
                                 &nbsp;
                                 <a onclick=\"del($detail->MaPKB)\"
                                    class=\"btn btn-icon waves-effect waves-light btn-danger\" title=\"Xóa\"> <i
-                                            class=\"fa fa-remove\"></i></a></td>";
+                                   class='fas fa-trash-alt' style='color:white'></i></a></td>";
           echo "</tr>";
         }
         if ($i == 0) {

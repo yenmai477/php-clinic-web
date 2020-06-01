@@ -22,7 +22,7 @@
       <div class="page-title-right">
         <ol class="breadcrumb m-0">
           <li class="breadcrumb-item">
-            <a href="javascript: void(0);">Trang chủ</a>
+            <a href="/">Trang chủ</a>
           </li>
           <li class="breadcrumb-item active">Phiếu khám bệnh</li>
           <li class="breadcrumb-item active">Danh sách phiếu khám bệnh</li>
@@ -90,7 +90,7 @@
               <td>{{$detail->TrieuChung}}</td>
               <td>{{$detail->loaibenh->TenLoaiBenh}}</td>
               <td>
-                <a href="{{route("ct-phieukham.get",[$detail->MaPKB])}}" target="_blank" class="btn btn-icon waves-effect waves-light btn-primary" title="Chi tiết đơn thuốc">
+                <a href="{{route("ct-phieukham.get",[$detail->MaPKB])}}" target="_blank" class="btn btn-icon waves-effect waves-light btn-success" title="Chi tiết đơn thuốc">
                   Đơn thuốc
                 </a> &nbsp;&nbsp;
 

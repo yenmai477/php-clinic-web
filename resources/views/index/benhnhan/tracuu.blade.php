@@ -13,7 +13,7 @@
           <li class="breadcrumb-item">
             <a href="javascript: void(0);">Trang chủ</a>
           </li>
-          <li class="breadcrumb-item active">Bệnh nhân</li>
+          <li class="breadcrumb-item">Bệnh nhân</li>
           <li class="breadcrumb-item active">Tra cứu bệnh nhân</li>
         </ol>
       </div>

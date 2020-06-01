@@ -19,8 +19,8 @@ class TrangChuController extends Controller
     $thang = date('Y-m');
     $tongBN = PhieuKhamBenh::where('NgayKham', 'like', "$thang%")->get()->groupBy('MaBN')->count();
     $tongPK = PhieuKhamBenh::where('NgayKham', 'like', "$thang%")->count();
-    // $tongDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first()->TongDoanhThu;
-    $tongDT = BaoCaoDoanhThu::where('ThangNam', '06/2018')->first()->TongDoanhThu;
+    $tongDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first()->TongDoanhThu;
+    // $tongDT = BaoCaoDoanhThu::where('ThangNam', '06/2018')->first()->TongDoanhThu;
     $pkbTrongThang = PhieuKhamBenh::where('NgayKham', 'like', "$thang%")->get();
     $tongTK = 0;
     foreach ($pkbTrongThang as $detail) {
@@ -31,9 +31,9 @@ class TrangChuController extends Controller
     for ($i = 1; $i <= 31; $i++) {
       $doanhThu[$i] = 0;
     }
-    // $BCDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first();
-    $BCDT = BaoCaoDoanhThu::where('ThangNam', "06/2018")->first();
-    // $CTBCDT = ChiTietBCDT::where('MaBCDT', $BCDT->MaBCDT)->where('Ngay', '<', date('j'))->where('Ngay', '>=', date('j') - 7)->orderBy('Ngay')->get();
+    $BCDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first();
+    // $BCDT = BaoCaoDoanhThu::where('ThangNam', "06/2018")->first();
+    $CTBCDT = ChiTietBCDT::where('MaBCDT', $BCDT->MaBCDT)->where('Ngay', '<', date('j'))->where('Ngay', '>=', date('j') - 7)->orderBy('Ngay')->get();
     $CTBCDT = ChiTietBCDT::where('MaBCDT', $BCDT->MaBCDT)->orderBy('Ngay')->get();
     foreach ($CTBCDT as $i => $detail) {
       if ($detail->Ngay == NULL)

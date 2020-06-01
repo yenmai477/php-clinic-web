@@ -9,9 +9,9 @@
     <div class="page-title-box d-flex align-items-center justify-content-between">
       <h4 class="mb-0 font-size-18">Danh sách bệnh nhân</h4>
 
-      <div class="page-title-right">
+      <div class="page-title-right d-none d-lg-block">
         <ol class="breadcrumb m-0">
-          <li class="breadcrumb-item"><a href="javascript: void(0);">Trang chủ</a></li>
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
           <li class="breadcrumb-item active">Bệnh nhân</li>
           <li class="breadcrumb-item active">Danh sách bệnh nhân</li>
         </ol>

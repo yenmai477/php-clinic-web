@@ -63,7 +63,7 @@
                   {{csrf_field()}}
                   <div class="form-group">
                     <label for="email">Tài khoản</label>
-                    <input class="form-control" id="email" name="email" type="email" required="" placeholder="Email" value="{{ old('email') }}" autocomplete="off" />
+                    <input class="form-control" id="email" name="email" type="email" required="" placeholder="Tài khoản" value="{{ old('email') }}" autocomplete="off" />
                   </div>
 
                   <div class="form-group">
@@ -77,10 +77,7 @@
                     </button>
                   </div>
 
-                  <div class="mt-4 text-center">
-                    <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your
-                      password?</a>
-                  </div>
+
                 </form>
               </div>
             </div>
