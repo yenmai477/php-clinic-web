@@ -31,15 +31,32 @@ class TrangChuController extends Controller
     for ($i = 1; $i <= 31; $i++) {
       $doanhThu[$i] = 0;
     }
+    // kiểm tra cùng tháng hay không
+    $isSameMonth = strcmp(date('m/Y'),  date('m/Y', strtotime("-7 days")));
     $BCDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first();
-    // $BCDT = BaoCaoDoanhThu::where('ThangNam', "06/2018")->first();
-    $CTBCDT = ChiTietBCDT::where('MaBCDT', $BCDT->MaBCDT)->where('Ngay', '<', date('j'))->where('Ngay', '>=', date('j') - 7)->orderBy('Ngay')->get();
-    $CTBCDT = ChiTietBCDT::where('MaBCDT', $BCDT->MaBCDT)->orderBy('Ngay')->get();
+    if ($isSameMonth === 0) {
+      $CTBCDT = ChiTietBCDT::where('MaBCDT', $BCDT->MaBCDT)->where('Ngay', '<', date('j'))->where('Ngay', '>=', date('j') - 7)->orderBy('Ngay')->get();
+    } else {
+      $BCDT_Ago = BaoCaoDoanhThu::where('ThangNam', date('m/Y', strtotime("-7 days")))->first();
+      $CTBCDT = ChiTietBCDT::where(function ($q) use ($BCDT) {
+        $q->where('MaBCDT', $BCDT->MaBCDT)
+          ->where('Ngay', '<', date('j'));
+      })->orWhere(function ($query) use ($BCDT_Ago) {
+        $query->where('MaBCDT', $BCDT_Ago->MaBCDT)
+          ->where('Ngay', '>=', date('d', strtotime("-7 days")));
+      })->orderBy('Ngay')->get();
+    }
+
+
     foreach ($CTBCDT as $i => $detail) {
-      if ($detail->Ngay == NULL)
+
+      if ($detail->Ngay == NULL) {
         $doanhThu[$detail->Ngay] = 0;
-      else
+      } else {
+        if ($detail->Ngay == 1) {
+        }
         $doanhThu[$detail->Ngay] = $detail->DoanhThu;
+      }
     }
     $TopThuocSoLan = ChiTietBCSDT::where('MaBCSDT', 2)->orderBy('SoLanDung', 'DESC')->offset(0)->limit(3)->get();
     $TopThuocSoLuong = ChiTietBCSDT::where('MaBCSDT', 2)->orderBy('SoLuongDung', 'DESC')->offset(0)->limit(3)->get();

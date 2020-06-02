@@ -230,16 +230,25 @@
     // The data for our dataset
     data: {
       labels: [
-        @for($i = date('d') - 7; $i < date('d'); $i++)
-        "{{$i}}/{{date('m')}}",
+        @for($i = 7; $i >= 1; $i--)
+        @php
+        $date = date('d/m', strtotime("-$i days"));
+        @endphp
+
+        // "{{$i}}/{{date('m')}}",
+        "{{$date}}",
         @endfor
       ],
       datasets: [{
         label: "Doanh thu (VND)",
         borderColor: '#556ee6',
         data: [
-          @for($i = date('d') - 7; $i < date('d'); $i++)
-          "{{$doanhThu[$i]}}",
+          @for($i = 7; $i >= 1; $i--)
+          @php
+          $date = date('d', strtotime("-$i days"));
+          @endphp
+
+          "{{$doanhThu[(int)$date]}}",
           @endfor
         ],
         fill: false,
@@ -257,4 +266,6 @@
     }
   });
 </script>
+
+
 @endsection
