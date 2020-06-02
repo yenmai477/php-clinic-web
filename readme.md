@@ -65,5 +65,5 @@ Quản lý phòng khám (phòng mạch tư) là đồ án môn "Nhập môn côn
   PUSHER_APP_CLUSTER=mt1
 
 ```
-- Chạy project bằng câu lệnh ```php artisan:serve```
+- Chạy project bằng câu lệnh ```php artisan serve```
 - Mở trang web ở địa chỉ ```localhost:8000``` và đăng nhập bằng tài khoản: yenmai477@gmail.com | secret.
