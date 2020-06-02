@@ -67,9 +67,9 @@
             <div class="p-l-r-10">
               <div class="form-group date">
                 <label>Ngày khám</label><br>
-                <!-- <input class="input-small datepicker hasDatepicker" id="ngaykham" type="date" name="ngaykham"> &#160; -->
+
                 <div class="input-group">
-                  <input type="text" class="form-control datepicker-vi" autocomplete="off" placeholder="dd/mm/yyyy" data-provide="datepicker" data-date-autoclose="true" id="ngaykham" type="date" name="ngaykham">
+                  <input type="text" class="form-control" autocomplete="off" placeholder="mm/dd/yyyy" data-provide="datepicker" data-date-autoclose="true" id="ngaykham" type="date" name="ngaykham">
                   <div class="input-group-append">
                     <button class="btn btn-primary" onclick="xoangay()"><i class="mdi mdi-calendar"></i></button>
                   </div>
@@ -169,19 +169,12 @@
       $("#ngaykham").val("");
     }
 
-    function randloading() {
-      var rand;
-      var myArray = ['giphy.gif', 'loading.gif', 'loading1.gif', 'loading2.gif', 'loading3.gif'];
-      return rand = myArray[Math.floor(Math.random() * myArray.length)];
-    }
-
     function timkiem() {
       var hoten = $("input[name='hoten']").val();
       var ngay = $("input[name='ngaykham']").val() || "";
       var trieuchung = $("input[name='trieuchung']").val();
       var loaibenh = $('select[name=loaibenh]').val();
       var token = $("input[name='_token']").val();
-      //            alert(value);
       // alert(ngay.replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$1-$2"));
       if (hoten == "" && trieuchung == "" && loaibenh == "" && ngay == "") {
         alert("Bạn chưa nhập từ khóa cần tìm.");
@@ -193,7 +186,8 @@
           data: {
             //                        "_token": token,
             "hoten": hoten,
-            "ngay": ngay.replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$2-$1"),
+            // "ngay": ngay.replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$2-$1"),
+            "ngay": ngay.replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$1-$2"),
             "trieuchung": trieuchung,
             "loaibenh": loaibenh
           },

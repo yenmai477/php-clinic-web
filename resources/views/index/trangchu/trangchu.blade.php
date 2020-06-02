@@ -148,7 +148,7 @@
   <div class="col-xl-6">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title mb-4">Top 3 thuốc có <b style="color: red">số lượng</b> sử dụng nhiều nhất</h4>
+        <h4 class="card-title mb-4">Top 3 thuốc có <span style="color: red">số lượng</span> sử dụng nhiều nhất</h4>
         <div class="table-responsive">
           <table class="table table-actions-bar">
             <thead>
@@ -181,7 +181,7 @@
   <div class="col-xl-6">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title mb-4">Top 3 thuốc có <b style="color: red">số lần</b> sử dụng nhiều nhất</h4>
+        <h4 class="card-title mb-4">Top 3 thuốc có <span style="color: red">số lần</span> sử dụng nhiều nhất</h4>
 
         <div class="table-responsive">
           <table class="table table-actions-bar">
