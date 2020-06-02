@@ -24,7 +24,7 @@ Quản lý phòng khám (phòng mạch tư) là đồ án môn "Nhập môn côn
 ## Cách chạy project
 - Cài đặt Xampp, Composer trên máy tính
 - Tạo database ```quanlyphongkham``` và import file ```quanlyphongkham.sql```trong project vào database
-- Chạy lệnh ```php  composer install```
+- Chạy lệnh ```composer install```
 - Chạy lệnh ```npm install```
 - Tạo file env và tạo secret key. Hoặc đơn giản bạn có thể tạo file env có nội dung như thế này 
 ```
