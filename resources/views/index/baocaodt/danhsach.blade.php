@@ -89,7 +89,7 @@
         </table>
       </div>
 
-      <div class="d-print-none p-t-10">
+      <div class="d-print-none p-t-10 mt-3">
         <div class="float-right">
           <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="fa fa-print"></i></a>
         </div>
