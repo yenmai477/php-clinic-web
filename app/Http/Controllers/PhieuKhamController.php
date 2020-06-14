@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\MessageBag;
 use App\BaoCaoDoanhThu;
 use App\ChiTietBCDT;
+use App\DSKhamBenhExcel;
 use Maatwebsite\Excel\Facades\Excel;
+
 
 class PhieuKhamController extends Controller
 {
@@ -52,58 +54,60 @@ class PhieuKhamController extends Controller
 
   public function getXuatExcel($ngay)
   {
-    $nameCompany = "Phòng Mạch Tư";
+    // $nameCompany = "Phòng Mạch Tư";
+    // $ngayFormat = date_format(date_create($ngay), 'd_m_Y');
+    // $dskhambenh = PhieuKhamBenh::where('NgayKham', $ngay)->get();
+    // if (count($dskhambenh) == 0)
+    //   return redirect()->route('ds-khambenh.get')->with('error', 'Không có gì để xuất');
+    // Excel::create('Danh sách khám bệnh ngày ' . $ngayFormat, function ($excel) use ($dskhambenh, $nameCompany, $ngayFormat) {
+    //   $excel->setCreator('Phần mềm quản lý phòng mạch tư')
+    //     ->setCompany($nameCompany)
+    //     ->setTitle('Danh sach kham benh')
+    //     ->setDescription('Đây là danh sách khám bệnh được backup từ hệ thống');
+    //   $excel->sheet('DSKB_' . $ngayFormat, function ($sheet) use ($dskhambenh) {
+    //     //set font and size
+    //     $sheet->setStyle(array(
+    //       'font' => array(
+    //         'name' => 'Times New Roman',
+    //         'size' => 13,
+    //         'bold' => false
+    //       ),
+    //       'text-align' => 'center'
+    //     ));
+    //     $sheet->row(1, array(
+    //       'Họ & Tên', 'Giới tính', 'Năm sinh', 'Địa chỉ'
+    //     ));
+    //     $sheet->row(1, function ($row) {
+    //       $row->setFontWeight('bold');
+    //     });
+    //     foreach ($dskhambenh as $i => $value) {
+    //       if ($value->benhnhan->GioiTinh == 1)
+    //         $sheet->row($i + 2, array(
+    //           $value->benhnhan->HoTen,
+    //           'Nữ',
+    //           $value->benhnhan->NamSinh,
+    //           $value->benhnhan->DiaChi
+    //         ));
+    //       elseif ($value->benhnhan->GioiTinh == 2)
+    //         $sheet->row($i + 2, array(
+    //           $value->benhnhan->HoTen,
+    //           'Nam',
+    //           $value->benhnhan->NamSinh,
+    //           $value->benhnhan->DiaChi
+    //         ));
+    //       else
+    //         $sheet->row($i + 2, array(
+    //           $value->benhnhan->HoTen,
+    //           'Khác',
+    //           $value->benhnhan->NamSinh,
+    //           $value->benhnhan->DiaChi
+    //         ));
+    //     }
+    //   });
+    // })->download('xlsx');
+    // //        return redirect()->back();
     $ngayFormat = date_format(date_create($ngay), 'd_m_Y');
-    $dskhambenh = PhieuKhamBenh::where('NgayKham', $ngay)->get();
-    if (count($dskhambenh) == 0)
-      return redirect()->route('ds-khambenh.get')->with('error', 'Không có gì để xuất');
-    Excel::create('Danh sách khám bệnh ngày ' . $ngayFormat, function ($excel) use ($dskhambenh, $nameCompany, $ngayFormat) {
-      $excel->setCreator('Phần mềm quản lý phòng mạch tư')
-        ->setCompany($nameCompany)
-        ->setTitle('Danh sach kham benh')
-        ->setDescription('Đây là danh sách khám bệnh được backup từ hệ thống');
-      $excel->sheet('DSKB_' . $ngayFormat, function ($sheet) use ($dskhambenh) {
-        //set font and size
-        $sheet->setStyle(array(
-          'font' => array(
-            'name' => 'Times New Roman',
-            'size' => 13,
-            'bold' => false
-          ),
-          'text-align' => 'center'
-        ));
-        $sheet->row(1, array(
-          'Họ & Tên', 'Giới tính', 'Năm sinh', 'Địa chỉ'
-        ));
-        $sheet->row(1, function ($row) {
-          $row->setFontWeight('bold');
-        });
-        foreach ($dskhambenh as $i => $value) {
-          if ($value->benhnhan->GioiTinh == 1)
-            $sheet->row($i + 2, array(
-              $value->benhnhan->HoTen,
-              'Nữ',
-              $value->benhnhan->NamSinh,
-              $value->benhnhan->DiaChi
-            ));
-          elseif ($value->benhnhan->GioiTinh == 2)
-            $sheet->row($i + 2, array(
-              $value->benhnhan->HoTen,
-              'Nam',
-              $value->benhnhan->NamSinh,
-              $value->benhnhan->DiaChi
-            ));
-          else
-            $sheet->row($i + 2, array(
-              $value->benhnhan->HoTen,
-              'Khác',
-              $value->benhnhan->NamSinh,
-              $value->benhnhan->DiaChi
-            ));
-        }
-      });
-    })->download('xlsx');
-    //        return redirect()->back();
+    return Excel::download(new DSKhamBenhExcel($ngay), "XuatPhieuKham_$ngayFormat.xlsx");
   }
 
   public function getDSPhieuKham()
