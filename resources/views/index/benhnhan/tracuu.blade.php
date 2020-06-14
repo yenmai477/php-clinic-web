@@ -148,19 +148,32 @@
   <script>
     function del(id) {
       $.confirm({
-        text: "Hành động này sẽ xóa dữ liệu của phiếu khám bệnh này <br/><a style='color: red'>(bao gồm đơn thuốc và hóa đơn)</a>.<br/>Bạn có chắc muốn xóa không?",
+        icon: 'fa fa-warning',
+        content: "Hành động này sẽ xóa dữ liệu của phiếu khám bệnh này (bao gồm đơn thuốc và hóa đơn). Bạn có chắc muốn xóa không?",
         title: "Xác nhận xóa",
-        confirmButton: "Có, hãy xóa",
-        cancelButton: "Không, đừng xóa",
+        type: 'red',
+        typeAnimated: true,
+        buttons: {
+          confirmButton: {
+            text: "Có hãy xóa",
+            btnClass: "btn-danger",
+            action: function(button) {
+              window.location.assign("phieukham/xoa/" + id);
+            },
+          },
+          cancelButton: {
+            text: "Không, đừng xóa",
+            btnClass: "btn-default",
+            action: function(button) {
+              console.log("cancel!");
+
+            }
+          },
+        },
         post: false,
         submitForm: false,
-        confirmButtonClass: "btn-danger",
-        cancelButtonClass: "btn-default",
-        dialogClass: "modal-dialog",
-        confirm: function(button) {
-          window.location.assign("phieukham/xoa/" + id);
-        },
-        cancel: function(button) {}
+        theme: "bootstrap"
+
       });
     }
   </script>

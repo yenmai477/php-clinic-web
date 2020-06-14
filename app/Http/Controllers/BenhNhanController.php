@@ -183,7 +183,7 @@ class BenhNhanController extends Controller
                                 &nbsp;            
                                 <a href=\"" . route('sua-phieukham.get', [$detail->MaPKB]) . "\"
                                    class=\"btn btn-icon waves-effect waves-light btn-warning\" title=\"Sửa\"> <i
-                                            class=\"fa fa-wrench\"></i></a>
+                                            class=\"fas fa-pencil-alt\"></i></a>
                                 &nbsp;
                                 &nbsp;
                                 <a onclick=\"del($detail->MaPKB)\"

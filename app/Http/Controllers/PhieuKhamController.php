@@ -42,7 +42,7 @@ class PhieuKhamController extends Controller
         else echo "<td>Khác</td>";
         echo "<td>" . $detail->benhnhan->NamSinh . "</td>";
         echo "<td>" . $detail->benhnhan->DiaChi . "</td>";
-        echo "<td>" . "<a href='" . route('ct-phieukham.get', [$detail->MaPKB]) . "' target='_blank'
+        echo "<td class='d-print-none'>" . "<a href='" . route('ct-phieukham.get', [$detail->MaPKB]) . "' target='_blank'
                                    class='btn btn-icon waves-effect waves-light btn-success' title='Chi tiết đơn thuốc'>
                                     Đơn thuốc</a>" . "</td>";
         echo "</tr>";

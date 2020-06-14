@@ -98,7 +98,7 @@
                                             @if (date('Y-m-d') != $detail->NgayKham)
                                            disabled
                                            @endif
-                                           " title="Sửa"> <i class="fa fa-wrench"></i></a>
+                                           " title="Sửa"> <i class="fas fa-pencil-alt"></i></a>
                 &nbsp;
                 &nbsp;
                 <a onclick="del({{$detail->MaPKB}})" class="btn btn-icon waves-effect waves-light btn-danger
@@ -152,6 +152,8 @@
   $(document).ready(function() {
     $('#datatable-responsive').DataTable({
       "language": {
+        "sInfo": "Dòng _START_ đến  _END_ trong tổng  _TOTAL_ dòng",
+        "sLengthMenu": "Hiển thị _MENU_ dòng",
         "paginate": {
           "previous": "<",
           "next": ">"
