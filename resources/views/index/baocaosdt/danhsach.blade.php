@@ -15,18 +15,22 @@
     <link href="assets/css/cssdate.css" rel="stylesheet" type="text/css">
 @endsection
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <ol class="breadcrumb">
-                <li>
-                    <a href=""><i class="ti-home"></i></a>
-                </li>
-                <li class="active">
-                    Báo cáo sử dụng thuốc
-                </li>
-            </ol>
-        </div>
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box d-flex align-items-center justify-content-between">
+      <h4 class="mb-0 font-size-18">Báo cáo sử dụng thuốc</h4>
+
+      <div class="page-title-right d-none d-lg-block">
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Báo cáo</li>
+          <li class="breadcrumb-item active">Báo cáo sử dụng thuốc</li>
+        </ol>
+      </div>
+
     </div>
+  </div>
+</div>
 
     @if (count($errors) > 0 || session('error'))
         <div class="alert alert-danger" role="alert">
@@ -49,8 +53,10 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-                <h4 class="m-t-0 header-title"><b>Báo cáo sử dụng thuốc</b></h4>
-                <div class="form-group date">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Báo cáo sử dụng thuốc</h4>
+                        <div class="form-group date">
                     {{csrf_field()}}
                     <label>Tháng</label><br>
                     <input class="input-small datepicker hasDatepicker" type="month" name="thang"
@@ -88,12 +94,15 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="hidden-print p-t-10">
-                    <div class="pull-right">
-                        <a href="javascript:window.print()" class="btn btn-inverse waves-effect waves-light"><i
+                <div class="d-print-none p-t-10 mt-3">
+                    <div class="float-right">
+                        <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i
                                     class="fa fa-print"></i></a>
                     </div>
                 </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

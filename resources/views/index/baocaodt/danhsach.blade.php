@@ -16,15 +16,19 @@
 @endsection
 @section('content')
 <div class="row">
-  <div class="col-sm-12 d-print-none">
-    <ol class="breadcrumb">
-      <li>
-        <a href=""><i class="ti-home"></i></a>
-      </li>
-      <li class="active">
-        Báo cáo doanh thu theo ngày
-      </li>
-    </ol>
+  <div class="col-12">
+    <div class="page-title-box d-flex align-items-center justify-content-between">
+      <h4 class="mb-0 font-size-18">Báo cáo doanh thu</h4>
+
+      <div class="page-title-right d-none d-lg-block">
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Báo cáo</li>
+          <li class="breadcrumb-item active">Báo cáo doanh thu</li>
+        </ol>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -49,9 +53,10 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="card-box table-responsive">
-      <h4 class="m-t-0 header-title"><b>Báo cáo doanh thu theo ngày</b></h4>
-
-      <div class="form-group date">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Báo cáo doanh thu theo ngày</h4>
+          <div class="form-group date">
         {{csrf_field()}}
         <label class="d-print-none">Tháng</label><br>
         <input class="input-small datepicker hasDatepicker" type="month" name="thang" onchange="getdsbaocao(this.value)" value="{{date("Y-m")}}">
@@ -94,6 +99,10 @@
           <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="fa fa-print"></i></a>
         </div>
       </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>

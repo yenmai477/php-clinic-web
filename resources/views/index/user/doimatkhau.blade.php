@@ -3,21 +3,21 @@
     <title>Đổi mật khẩu - Quản lý phòng mạch tư</title>
 @endsection
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <ol class="breadcrumb">
-                <li>
-                    <a href=""><i class="ti-home"></i></a>
-                </li>
-                <li>
-                    <a href="{{route("hoso.get")}}">Hồ sơ</a>
-                </li>
-                <li class="active">
-                    Đổi mật khẩu
-                </li>
-            </ol>
-        </div>
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box d-flex align-items-center justify-content-between">
+      <h4 class="mb-0 font-size-18">Đổi mật khẩu</h4>
+
+      <div class="page-title-right d-none d-lg-block">
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Đổi mật khẩu</li>
+        </ol>
+      </div>
+
     </div>
+  </div>
+</div>
 
     @if (count($errors) > 0 || session('error'))
         <div class="alert alert-danger" role="alert">
@@ -41,8 +41,10 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>Đổi mật khẩu</b></h4>
-                <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Đổi mật khẩu</h4>
+                        <div class="row">
                     <div class="col-md-12">
                         <div class="p-l-r-10">
                             <form class="form-horizontal" role="form" action="{{route('doimatkhau.post')}}" method="post">
@@ -64,12 +66,15 @@
 
 
                                 <div class="form-group">
-                                    <button class="ladda-button btn btn-default" data-style="expand-right">Đổi mật khẩu</button>
+                                    <button class="ladda-button btn btn-primary" data-style="expand-right">Đổi mật khẩu</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
