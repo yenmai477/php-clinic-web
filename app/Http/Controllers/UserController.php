@@ -98,7 +98,7 @@ class UserController extends Controller
     ];
     $errors = Validator::make($request->all(), $rules, $messages);
     if ($errors->fails()) {
-      return redirect('')->route('doimatkhau.get')
+      return redirect('doimatkhau')
         ->withErrors($errors)
         ->withInput();
     }

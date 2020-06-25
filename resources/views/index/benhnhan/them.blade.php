@@ -62,13 +62,13 @@
   <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title mb-2"><b>Thêm bệnh nhân</b></h4>
+        <h4 class="card-title mb-4 font-size-16">Thêm bệnh nhân</h4>
         <p class="text-muted m-b-10 font-13">
           <b>Bắt buộc</b>
           <span class="badge badge-pill badge-soft-primary font-size-11">Họ & tên</span>
           <span class="badge badge-pill badge-soft-primary font-size-11">Giới tính</span>
           <span class="badge badge-pill badge-soft-primary font-size-11">Năm sinh</span>
-          <span class="badge badge-pill badge-soft-primary font-size-11">Địachỉ</span>
+          <span class="badge badge-pill badge-soft-primary font-size-11">Địa chỉ</span>
         </p>
         <div class="row">
           <div class="col-md-6">

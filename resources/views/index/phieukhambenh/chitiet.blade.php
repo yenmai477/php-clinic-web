@@ -54,7 +54,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title mb-4 text-center">
+        <h3 class="card-title mb-4 font-size-16 text-center font-size-18">
           PHIẾU KHÁM BỆNH & HÓA ĐƠN
         </h3>
         <hr />
@@ -62,7 +62,7 @@
           <div class="col-md-4">
 
             <div class="m-t-0 text-center">
-              <address style="font-size: 1.25em">
+              <address style="font-size: 16px">
                 <strong>Họ & tên: </strong> {{$PKB->benhnhan->HoTen}} <br>
                 <strong style="line-height: 2.5;">Triệu chứng: </strong> {{$PKB->TrieuChung}}<br>
               </address>
@@ -72,7 +72,7 @@
           <div class="col-md-4">
 
             <div class="m-t-0 text-center">
-              <address style="font-size: 1.25em">
+              <address style="font-size: 16px">
                 <strong>Ngày
                   khám: </strong> {{date_format(date_create($PKB->NgayKham),'d/m/Y')}}
                 <br />

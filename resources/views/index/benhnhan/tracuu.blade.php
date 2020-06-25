@@ -44,7 +44,7 @@
   <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title mb-4">Tra cứu bệnh nhân</h4>
+        <h4 class="card-title mb-4 font-size-16">Tra cứu bệnh nhân</h4>
         <div class="row">
           <div class="col-md-6">
             <div class="p-l-r-10">
@@ -110,7 +110,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title mb-4">
+        <h4 class="card-title mb-4 font-size-16">
           Kết quả tra cứu bệnh nhân
         </h4>
         <div class="p-10">

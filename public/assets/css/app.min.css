@@ -171,6 +171,12 @@
   content: "\ea3f";
 }
 
+/*  FIXME: 06/17/20  font-size */
+body,
+.form-control {
+  font-size: 15px !important;
+}
+
 body[data-topbar="dark"] #page-topbar {
   background-color: #2a3042;
 }
@@ -439,12 +445,13 @@ body[data-layout="horizontal"] .footer {
   font-size: 1rem;
 }
 
+/* FIXME: 06/17/20  update font size */
 #sidebar-menu ul li a {
   display: block;
   padding: 0.625rem 1.5rem;
   color: #545a6d;
   position: relative;
-  font-size: 13px;
+  font-size: 15px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -477,9 +484,10 @@ body[data-layout="horizontal"] .footer {
   padding: 0;
 }
 
+/*  FIXME: 06/17/20  Update sub menu */
 #sidebar-menu ul li ul.sub-menu li a {
   padding: 0.4rem 1.5rem 0.4rem 3.5rem;
-  font-size: 13px;
+  font-size: 15px;
   color: #545a6d;
 }
 
@@ -4412,3 +4420,9 @@ input[switch="dark"]:checked + label {
   background-color: #fafafa !important;
   border-color: rgba(118, 118, 118, 0.3) !important;
 }
+
+
+ /* TODO: 06/25/20 modify title */
+ h4.mb-0.font-size-18 {
+  font-size: 18px!important;
+ }

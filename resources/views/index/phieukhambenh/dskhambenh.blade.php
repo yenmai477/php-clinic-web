@@ -54,7 +54,7 @@
     <div class="card-box table-responsive">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title mb-4">Danh sách khám bệnh</h4>
+          <h4 class="card-title mb-4 font-size-16">Danh sách khám bệnh</h4>
           <div class="form-group date">
             {{csrf_field()}}
             <label>Ngày khám</label><br>

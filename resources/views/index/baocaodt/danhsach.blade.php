@@ -33,7 +33,7 @@
 </div>
 
 @if (count($errors) > 0 || session('error'))
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger d-print-none" role="alert">
   <strong>Cảnh báo!</strong><br>
   @foreach($errors->all() as $err)
   {{$err}}<br />
@@ -42,7 +42,7 @@
 </div>
 @endif
 @if (session('success'))
-<div class="alert alert-success">
+<div class="alert alert-success d-print-none">
   <strong>Thành công!</strong>
   <button type="button" class="close" data-dismiss="alert">×</button>
   <br />
@@ -55,50 +55,50 @@
     <div class="card-box table-responsive">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title mb-4">Báo cáo doanh thu theo ngày</h4>
+          <h4 class="card-title mb-4 font-size-16">Báo cáo doanh thu theo ngày</h4>
           <div class="form-group date">
-        {{csrf_field()}}
-        <label class="d-print-none">Tháng</label><br>
-        <input class="input-small datepicker hasDatepicker" type="month" name="thang" onchange="getdsbaocao(this.value)" value="{{date("Y-m")}}">
-      </div>
+            {{csrf_field()}}
+            <label class="d-print-none">Tháng</label><br>
+            <input class="input-small datepicker hasDatepicker" type="month" name="thang" onchange="getdsbaocao(this.value)" value="{{date("Y-m")}}">
+          </div>
 
-      <div class="p-10">
-        <table class="table table-striped table-bordered m-0">
-          <thead>
-            <tr>
-              <th class="text-center">STT</th>
-              <th class="text-center">Ngày</th>
-              <th class="text-center">Số bệnh nhân</th>
-              <th class="text-center">Doanh thu</th>
-              <th class="text-center">Tỷ lệ</th>
-            </tr>
-          </thead>
-          <tbody style="text-align: center" id="tbodydskhambenh">
-            <?php $i = 0; ?>
-            @if(isset($CTBCDT))
-            @foreach($CTBCDT as $detail)
-            <tr>
-              <td>{{++$i}}</td>
-              <td>{{$detail->Ngay<10?"0".$detail->Ngay:$detail->Ngay}}/{{$detail->baocaodoanhthu->ThangNam}}</td>
-              <td>{{$detail->SoBenhNhan}}</td>
-              <td>{{number_format($detail->DoanhThu)}} VND</td>
-              <td>{{round(($detail->DoanhThu/$detail->baocaodoanhthu->TongDoanhThu)*100,2)}}%</td>
-            </tr>
-            @endforeach
-            @else
-            <tr>
-              <td colspan="5">Không có dữ liệu</td>
-            </tr>
-            @endif
-          </tbody>
-        </table>
-      </div>
+          <div class="p-10">
+            <table class="table table-striped table-bordered m-0">
+              <thead>
+                <tr>
+                  <th class="text-center">STT</th>
+                  <th class="text-center">Ngày</th>
+                  <th class="text-center">Số bệnh nhân</th>
+                  <th class="text-center">Doanh thu</th>
+                  <th class="text-center">Tỷ lệ</th>
+                </tr>
+              </thead>
+              <tbody style="text-align: center" id="tbodydskhambenh">
+                <?php $i = 0; ?>
+                @if(isset($CTBCDT))
+                @foreach($CTBCDT as $detail)
+                <tr>
+                  <td>{{++$i}}</td>
+                  <td>{{$detail->Ngay<10?"0".$detail->Ngay:$detail->Ngay}}/{{$detail->baocaodoanhthu->ThangNam}}</td>
+                  <td>{{$detail->SoBenhNhan}}</td>
+                  <td>{{number_format($detail->DoanhThu)}} VND</td>
+                  <td>{{round(($detail->DoanhThu/$detail->baocaodoanhthu->TongDoanhThu)*100,2)}}%</td>
+                </tr>
+                @endforeach
+                @else
+                <tr>
+                  <td colspan="5">Không có dữ liệu</td>
+                </tr>
+                @endif
+              </tbody>
+            </table>
+          </div>
 
-      <div class="d-print-none p-t-10 mt-3">
-        <div class="float-right">
-          <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="fa fa-print"></i></a>
-        </div>
-      </div>
+          <div class="d-print-none p-t-10 mt-3">
+            <div class="float-right">
+              <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="fa fa-print"></i></a>
+            </div>
+          </div>
         </div>
       </div>
 

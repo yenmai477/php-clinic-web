@@ -56,7 +56,7 @@
   <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title mb-4">Danh sách bệnh nhân</h4>
+        <h4 class="card-title mb-4 font-size-16">Danh sách bệnh nhân</h4>
         <div class="card-box table-responsive dvData">
           <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
             <thead>

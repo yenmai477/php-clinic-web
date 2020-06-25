@@ -77,7 +77,7 @@
     <div class="col-sm-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title mb-4">
+          <h4 class="card-title mb-4 font-size-16">
             Thêm phiếu khám bệnh
           </h4>
           <p class="text-muted m-b-10 font-13">
@@ -159,7 +159,7 @@
     <div class="col-sm-12">
       <div class="card table-responsive">
         <div class="card-body">
-          <h4 class="card-title mb-4">
+          <h4 class="card-title mb-4 font-size-16">
             Kê đơn thuốc
           </h4>
           <div class="p-10">
