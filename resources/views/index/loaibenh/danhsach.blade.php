@@ -1,105 +1,109 @@
 @extends('index.layout.index')
 @section('title')
-    <title>Danh sách các loại bệnh - Quản lý phòng mạch tư</title>
+<title>Danh sách các loại bệnh - Quản lý phòng mạch tư</title>
 @endsection
 @section('style')
-    <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
 @endsection
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <ol class="breadcrumb">
-                <li>
-                    <a href=""><i class="ti-home"></i></a>
-                </li>
-                <li class="active">
-                    Danh sách loại bệnh
-                </li>
-            </ol>
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0 font-size-18">Danh sách loại bệnh</h4>
+
+            <div class="page-title-right d-none d-lg-block">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Danh mục</li>
+                    <li class="breadcrumb-item active">Danh sách loại bệnh</li>
+                </ol>
+            </div>
+
         </div>
     </div>
+</div>
 
-    @if (count($errors) > 0 || session('error'))
-        <div class="alert alert-danger" role="alert">
-            <strong>Cảnh báo!</strong><br>
-            @foreach($errors->all() as $err)
-                {{$err}}<br/>
-            @endforeach
-            {{session('error')}}
-        </div>
-    @endif
-    @if (session('success'))
-        <div class="alert alert-success">
-            <strong>Thành công!</strong>
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <br/>
-            {{session('success')}}
-        </div>
-    @endif
-    <!--end duong dan nho-->
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card-box table-responsive">
-                <h4 class="m-t-0 header-title"><b>Danh sách loại bệnh</b></h4>
-                <table id="datatable-responsive"
-                       class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
-                       width="100%">
+@if (count($errors) > 0 || session('error'))
+<div class="alert alert-danger" role="alert">
+    <strong>Cảnh báo!</strong><br>
+    @foreach($errors->all() as $err)
+    {{$err}}<br />
+    @endforeach
+    {{session('error')}}
+</div>
+@endif
+@if (session('success'))
+<div class="alert alert-success">
+    <strong>Thành công!</strong>
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <br />
+    {{session('success')}}
+</div>
+@endif
+<!--end duong dan nho-->
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Danh sách loại bệnh</h4>
+                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap"
+                    cellspacing="0" width="100%">
                     <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Ngày thêm</th>
-                        <th>Loại bệnh</th>
-                        <th>Hành động</th>
-                    </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Ngày thêm</th>
+                            <th>Loại bệnh</th>
+                            <th>Hành động</th>
+                        </tr>
                     </thead>
 
                     <tbody>
-                    @foreach($dsLoaiBenh as $i => $detail)
+                        @foreach($dsLoaiBenh as $i => $detail)
                         <tr>
                             <td>{{$i + 1}}</td>
-                            <td title="{{($detail->created_at)->format('d/m/Y H:i:s')}}">{{($detail->created_at)->format('d/m/Y')}}</td>
+                            <td title="{{($detail->created_at)->format('d/m/Y H:i:s')}}">
+                                {{($detail->created_at)->format('d/m/Y')}}</td>
                             <td title="{{$detail->TenLoaiBenh}}">{{$detail->TenLoaiBenh}}</td>
                             <td>
-                                <a href="{{route('sua-loaibenh.get',$detail->MaLoaiBenh)}}" class="btn btn-icon waves-effect waves-light btn-warning" title="Sửa"> <i class="fa fa-wrench"></i></a>
+                                <a href="{{route('sua-loaibenh.get',$detail->MaLoaiBenh)}}"
+                                    class="btn btn-warning waves-light waves-effect" title="Sửa"> <i
+                                        class="fas fa-pencil-alt"></i></a>
                                 &nbsp;
                                 &nbsp;
                                 <a onclick="del({{$detail->MaLoaiBenh}})"
-                                   class="btn btn-icon waves-effect waves-light btn-danger" title="Xóa"> <i
-                                            class="fa fa-remove"></i></a>
+                                    class="btn btn-danger waves-light waves-effect" title="Xóa"> <i
+                                        class="fas fa-trash-alt" style="color:white"></i></a>
                             </td>
                         </tr>
-                    @endforeach
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>Thêm loại bệnh</b></h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Thêm loại bệnh</h4>
                 <p class="text-muted m-b-10 font-13">
-                    Thêm loại bệnh mới.<br/><b>Bắt buộc</b> <code>Loại bệnh</code>
+                    <b>Bắt buộc</b> <code>Loại bệnh</code>
                 </p>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="p-l-r-10">
                             <form class="form-horizontal" role="form" action="{{route('them-loaibenh.post')}}"
-                                  method="post">
+                                method="post">
                                 {{csrf_field()}}
 
                                 <div class="form-group">
                                     <label class="control-label">Loại bệnh</label>
-                                    <input name="tenloaibenh" type="text" class="form-control" value="{{old('tenloaibenh')}}" placeholder="Nhập tên loại bệnh..." required>
+                                    <input name="tenloaibenh" type="text" class="form-control"
+                                        value="{{old('tenloaibenh')}}" placeholder="Nhập tên loại bệnh..." required>
                                 </div>
 
                                 <div class="form-group">
-                                    <button class="ladda-button btn btn-default" data-style="expand-right">Lưu lại
+                                    <button class="btn btn-primary" data-style="expand-right">Lưu lại
                                     </button>
                                 </div>
                             </form>
@@ -109,56 +113,52 @@
             </div>
         </div>
     </div>
+</div>
 
 @endsection
 @section('script-ori')
 
-    <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
-    <script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
-    <script src="assets/plugins/datatables/jszip.min.js"></script>
-    <script src="assets/plugins/datatables/vfs_fonts.js"></script>
-    <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
-    <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
-    <script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+<script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+<script src="assets/plugins/datatables/jszip.min.js"></script>
+<script src="assets/plugins/datatables/vfs_fonts.js"></script>
+<script src="assets/plugins/datatables/buttons.html5.min.js"></script>
+<script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
 
 @endsection
 @section('script')
-    <script>
-        function del(id) {
-            $.confirm({
-                text: "Hành động này sẽ xóa dữ liệu của loại bệnh này. Bạn có chắc muốn xóa không?",
-                title: "Xác nhận xóa",
-                confirmButton: "Có, hãy xóa",
-                cancelButton: "Không, đừng xóa",
-                post: false,
-                submitForm: false,
-                confirmButtonClass: "btn-danger",
-                cancelButtonClass: "btn-default",
-                dialogClass: "modal-dialog",
-                confirm: function (button) {
-                    window.location.assign("loaibenh/xoa/" + id);
-                },
-                cancel: function (button) {
-                }
-            });
-        }
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#datatable-responsive').DataTable(
-                    {
-                        "columnDefs": [
-                            {
-                                "className": "text-center",
-                                "targets": [0, 1]
-                            },
-                        ],
-//                        "paging":   false,
-                        "ordering": false,
-//                        "info":     false,
-                        "bFilter": false
-                    }
-            );
-        });
-    </script>
+<script>
+function del(id) {
+    $.confirm({
+        text: "Hành động này sẽ xóa dữ liệu của loại bệnh này. Bạn có chắc muốn xóa không?",
+        title: "Xác nhận xóa",
+        confirmButton: "Có, hãy xóa",
+        cancelButton: "Không, đừng xóa",
+        post: false,
+        submitForm: false,
+        confirmButtonClass: "btn-danger",
+        cancelButtonClass: "btn-default",
+        dialogClass: "modal-dialog",
+        confirm: function(button) {
+            window.location.assign("loaibenh/xoa/" + id);
+        },
+        cancel: function(button) {}
+    });
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#datatable-responsive').DataTable({
+        "columnDefs": [{
+            "className": "text-center",
+            "targets": [0, 1]
+        }, ],
+        //                        "paging":   false,
+        "ordering": false,
+        //                        "info":     false,
+        "bFilter": false
+    });
+});
+</script>
 @endsection
