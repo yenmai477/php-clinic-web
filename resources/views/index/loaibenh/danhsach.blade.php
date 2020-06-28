@@ -87,7 +87,8 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">Thêm loại bệnh</h4>
                 <p class="text-muted m-b-10 font-13">
-                    <b>Bắt buộc</b> <code>Loại bệnh</code>
+                    <b>Bắt buộc</b>
+                    <span class="badge badge-pill badge-soft-primary font-size-11">Loại bệnh</span>
                 </p>
                 <div class="row">
                     <div class="col-md-12">

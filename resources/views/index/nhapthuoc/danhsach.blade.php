@@ -14,7 +14,7 @@
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Danh mục</li>
-                    <li class="breadcrumb-item active">Danh sách phiếu nhập thuốc</li>
+                    <li class="breadcrumb-item active">Nhập thuốc</li>
                 </ol>
             </div>
 

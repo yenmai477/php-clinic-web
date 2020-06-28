@@ -46,7 +46,10 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">Quy định</h4>
                 <p class="text-muted m-b-10 font-13">
-                    <b>Bắt buộc</b> <code>Số bệnh nhân khám tối đa</code> <code>Tiền khám</code> <code>Mức cảnh báo hết thuốc</code>
+                    <b>Bắt buộc</b> 
+                    <span class="badge badge-pill badge-soft-primary font-size-11">Số bệnh nhân khám tối đa</span>
+                    <span class="badge badge-pill badge-soft-primary font-size-11">Tiền khám</span>
+                    <span class="badge badge-pill badge-soft-primary font-size-11">Mức cảnh báo hết thuốc</span>
                 </p>
                 <div class="row">
                     <div class="col-md-12">
