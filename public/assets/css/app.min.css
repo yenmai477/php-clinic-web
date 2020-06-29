@@ -4421,8 +4421,11 @@ input[switch="dark"]:checked + label {
   border-color: rgba(118, 118, 118, 0.3) !important;
 }
 
+/* TODO: 06/25/20 modify title */
+h4.mb-0.font-size-18 {
+  font-size: 18px !important;
+}
 
- /* TODO: 06/25/20 modify title */
- h4.mb-0.font-size-18 {
-  font-size: 18px!important;
- }
+p.text-muted.font-weight-medium {
+  min-height: 44px !important;
+}

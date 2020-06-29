@@ -2,25 +2,13 @@
   "use strict";
 
   function s(e) {
-    1 == t("#light-mode-switch").prop("checked") && "light-mode-switch" === e
-      ? (t("#dark-mode-switch").prop("checked", !1),
-        t("#rtl-mode-switch").prop("checked", !1),
-        t("#bootstrap-style").attr("href", "assets/css/bootstrap.min.css"),
-        t("#app-style").attr("href", "assets/css/app.min.css"),
-        sessionStorage.setItem("is_visited", "light-mode-switch"))
-      : 1 == t("#dark-mode-switch").prop("checked") && "dark-mode-switch" === e
-      ? (t("#light-mode-switch").prop("checked", !1),
-        t("#rtl-mode-switch").prop("checked", !1),
-        t("#bootstrap-style").attr("href", "assets/css/bootstrap-dark.min.css"),
-        t("#app-style").attr("href", "assets/css/app-dark.min.css"),
-        sessionStorage.setItem("is_visited", "dark-mode-switch"))
-      : 1 == t("#rtl-mode-switch").prop("checked") &&
-        "rtl-mode-switch" === e &&
-        (t("#light-mode-switch").prop("checked", !1),
-        t("#dark-mode-switch").prop("checked", !1),
-        t("#bootstrap-style").attr("href", "assets/css/bootstrap.min.css"),
-        t("#app-style").attr("href", "assets/css/app-rtl.min.css"),
-        sessionStorage.setItem("is_visited", "rtl-mode-switch"));
+    var status = sessionStorage.getItem("sidebar-hide");
+    if (status) {
+      t("body").addClass("sidebar-enable");
+      992 <= t(window).width()
+        ? t("body").addClass("vertical-collpsed")
+        : t("body").removeClass("vertical-collpsed");
+    }
   }
 
   function e() {
@@ -31,7 +19,10 @@
   }
   t("#side-menu").metisMenu(),
     t("#vertical-menu-btn").on("click", function (e) {
-      e.preventDefault(),
+      sessionStorage.getItem("sidebar-hide")
+        ? sessionStorage.removeItem("sidebar-hide")
+        : sessionStorage.setItem("sidebar-hide", "true"),
+        e.preventDefault(),
         t("body").toggleClass("sidebar-enable"),
         992 <= t(window).width()
           ? t("body").toggleClass("vertical-collpsed")
