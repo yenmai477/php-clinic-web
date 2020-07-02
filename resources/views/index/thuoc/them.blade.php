@@ -3,7 +3,7 @@
 <title>Thêm thuốc - Quản lý phòng mạch tư</title>
 @endsection
 @section('style')
-<link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<!-- <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" /> -->
 <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
 @endsection
 

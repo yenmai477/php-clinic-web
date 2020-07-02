@@ -4429,3 +4429,10 @@ h4.mb-0.font-size-18 {
 p.text-muted.font-weight-medium {
   min-height: 44px !important;
 }
+
+/*  TODO: 07/01/20  disable input */
+
+input:read-only {
+  background-color: rgb(250, 250, 250) !important;
+  cursor: default;
+}

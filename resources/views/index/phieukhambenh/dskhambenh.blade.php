@@ -60,7 +60,7 @@
             <label>Ngày khám</label><br>
             <input class="input-small datepicker hasDatepicker" id="ngaykham" type="date" name="ngaykham" onchange="abc(this.value)" value="{{date("Y-m-d")}}">
             <button class="btn btn-success float-right d-print-none" data-style="expand-right" onclick="ExportExcel()">
-              <i class="fa fa-file-excel-o"></i> Xuất Excel
+              <i class="font-size-16 align-middle mr-2 fas fa-file-excel"></i> Xuất Excel
             </button>
           </div>
 

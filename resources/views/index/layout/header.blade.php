@@ -69,7 +69,7 @@
                     <div class="simplebar-content" style="padding: 0px;">
 
                       @if(count($CanhBaoThuoc) > 0)
-                      @foreach($CanhBaoThuoc as $detail) <a href="" class="text-reset notification-item">
+                      @foreach($CanhBaoThuoc as $detail) <span href="" class="text-reset notification-item">
                         <div class="media">
                           <div class="avatar-xs mr-3">
                             <span class="avatar-title bg-primary rounded-circle font-size-16">
@@ -85,26 +85,26 @@
                             </div>
                           </div>
                         </div>
-                      </a>
-                      @endforeach
-                      @else
-                      <a href="" class="text-reset notification-item">
-                        <div class="media">
-                          <div class="avatar-xs mr-3">
-                            <span class="avatar-title bg-primary rounded-circle font-size-16">
-                              <i class="bx bx-band-aid"></i>
-                            </span>
-                          </div>
-                          <div class="media-body">
-                            <h6 class="mt-0 mb-1">Không có cảnh báo thuốc</h6>
-                            <div class="font-size-12 text-muted">
-                              <p class="mb-1">Chúng tôi sẽ thông báo cho bạn khi có cảnh báo mới</p>
-                              <!-- <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p> -->
+                        </a>
+                        @endforeach
+                        @else
+                        <a href="" class="text-reset notification-item">
+                          <div class="media">
+                            <div class="avatar-xs mr-3">
+                              <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                <i class="bx bx-band-aid"></i>
+                              </span>
+                            </div>
+                            <div class="media-body">
+                              <h6 class="mt-0 mb-1">Không có cảnh báo thuốc</h6>
+                              <div class="font-size-12 text-muted">
+                                <p class="mb-1">Chúng tôi sẽ thông báo cho bạn khi có cảnh báo mới</p>
+                                <!-- <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p> -->
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </a>
-                      @endif
+                        </a>
+                        @endif
                     </div>
                   </div>
                 </div>

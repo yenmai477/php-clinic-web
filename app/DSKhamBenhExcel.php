@@ -30,7 +30,7 @@ class DSKhamBenhExcel implements WithHeadings, FromQuery, WithMapping, ShouldAut
   public function headings(): array
   {
     return [
-      'Họ & Tên', 'Giới tính', 'Năm sinh', 'Địa chỉ', "LoaiBenh"
+      'Họ & Tên', 'Giới tính', 'Năm sinh', 'Địa chỉ'
     ];
   }
 

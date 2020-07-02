@@ -3,8 +3,8 @@
 <title>Thêm phiếu khám bệnh - Quản lý phòng mạch tư</title>
 @endsection
 @section('style')
-<link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+<!-- <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" /> -->
+<!-- <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" /> -->
 <link href="assets/css/cssdate.css" rel="stylesheet" type="text/css">
 <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -133,7 +133,7 @@
               <div class="p-l-r-10">
                 <div class="form-group date">
                   <label>Ngày khám</label><br>
-                  <input class="input-small datepicker hasDatepicker" id="ngaykham" type="date" name="ngaykham" value="{{date('Y-m-d')}}" readonly>
+                  <input class="input-disabled input-small datepicker hasDatepicker" id="ngaykham" type="date" name="ngaykham" value="{{date('Y-m-d')}}" readonly>
                 </div>
 
                 <div class="form-group">

@@ -110,6 +110,7 @@
       "language": {
         "sInfo": "Dòng _START_ đến  _END_ trong tổng  _TOTAL_ dòng",
         "sLengthMenu": "Hiển thị _MENU_ dòng",
+        "sSearch": "Tìm kiếm: ",
         "paginate": {
           "previous": "<",
           "next": ">"

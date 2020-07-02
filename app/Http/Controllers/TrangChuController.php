@@ -19,7 +19,13 @@ class TrangChuController extends Controller
     $thang = date('Y-m');
     $tongBN = PhieuKhamBenh::where('NgayKham', 'like', "$thang%")->get()->groupBy('MaBN')->count();
     $tongPK = PhieuKhamBenh::where('NgayKham', 'like', "$thang%")->count();
-    $tongDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first()->TongDoanhThu;
+    $tongDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first();
+    if ($tongDT) {
+      $tongDT = $tongDT->TongDoanhThu;
+    } else {
+      $tongDT = 0;
+    }
+
     // $tongDT = BaoCaoDoanhThu::where('ThangNam', '06/2018')->first()->TongDoanhThu;
     $pkbTrongThang = PhieuKhamBenh::where('NgayKham', 'like', "$thang%")->get();
     $tongTK = 0;
@@ -34,12 +40,13 @@ class TrangChuController extends Controller
     // kiểm tra cùng tháng hay không
     $isSameMonth = strcmp(date('m/Y'),  date('m/Y', strtotime("-7 days")));
     $BCDT = BaoCaoDoanhThu::where('ThangNam', date('m/Y'))->first();
+    $MaBCDT = $BCDT ? $BCDT->MaBCDT : NULL;
     if ($isSameMonth === 0) {
-      $CTBCDT = ChiTietBCDT::where('MaBCDT', $BCDT->MaBCDT)->where('Ngay', '<', date('j'))->where('Ngay', '>=', date('j') - 7)->orderBy('Ngay')->get();
+      $CTBCDT = ChiTietBCDT::where('MaBCDT', $MaBCDT)->where('Ngay', '<', date('j'))->where('Ngay', '>=', date('j') - 7)->orderBy('Ngay')->get();
     } else {
       $BCDT_Ago = BaoCaoDoanhThu::where('ThangNam', date('m/Y', strtotime("-7 days")))->first();
-      $CTBCDT = ChiTietBCDT::where(function ($q) use ($BCDT) {
-        $q->where('MaBCDT', $BCDT->MaBCDT)
+      $CTBCDT = ChiTietBCDT::where(function ($q) use ($MaBCDT) {
+        $q->where('MaBCDT', $MaBCDT)
           ->where('Ngay', '<', date('j'));
       })->orWhere(function ($query) use ($BCDT_Ago) {
         $query->where('MaBCDT', $BCDT_Ago->MaBCDT)

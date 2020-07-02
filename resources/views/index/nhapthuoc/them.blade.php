@@ -64,7 +64,7 @@
           <h4 class="card-title mb-4">Thêm phiếu nhập thuốc</h4>
           <div class="form-group date p-l-r-10">
             <label>Ngày nhập thuốc</label><br>
-            <input class="input-small datepicker hasDatepicker" id="ngaykham" type="date" name="ngaynhap" value="{{date('Y-m-d')}}">
+            <input class="input-small datepicker hasDatepicker" id="ngaykham" type="date" name="ngaynhap" value="{{date('Y-m-d')}}" readonly>
           </div>
 
           <div class="p-10">
@@ -137,6 +137,18 @@
   // }
   $(document).ready(function() {
     $('#datatable-responsive').DataTable({
+      "language": {
+        "sSearch": "Tìm kiếm: ",
+        "sInfo": "Dòng _START_ đến  _END_ trong tổng  _TOTAL_ dòng",
+        "sLengthMenu": "Hiển thị _MENU_ dòng",
+        "paginate": {
+          "previous": "<",
+          "next": ">"
+        }
+      },
+      "drawCallback": function() {
+        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+      },
       "columnDefs": [{
         "className": "text-center",
         "targets": [0, 1, 2, 3, 4]

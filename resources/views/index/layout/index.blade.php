@@ -12,9 +12,8 @@
   <link rel="shortcut icon" href="assets/images/favicon.ico">
 
 
-  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+  <!-- <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" /> -->
   <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-  <link href="assets/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
   <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/libs/jquery/jquery-confirm.min.css">
   <link rel="stylesheet" type="text/css" href="assets/libs/toastr/build/toastr.min.css">
@@ -111,7 +110,6 @@
 
 
     <script src="assets/libs/select2/js/select2.min.js"></script>
-    <script src="assets/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
     <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 
     <!-- Datatable init js -->

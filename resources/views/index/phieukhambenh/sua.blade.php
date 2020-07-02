@@ -3,7 +3,7 @@
 <title>Sửa phiếu khám bệnh - Quản lý phòng mạch tư</title>
 @endsection
 @section('style')
-<link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<!-- <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" /> -->
 <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
 <link href="assets/css/cssdate.css" rel="stylesheet" type="text/css">
 <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
