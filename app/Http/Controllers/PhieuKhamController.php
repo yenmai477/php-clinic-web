@@ -64,6 +64,7 @@ class PhieuKhamController extends Controller
     return view('index.phieukhambenh.danhsach', compact('dsPhieuKham'));
   }
 
+
   public function getThemPhieuKham($id = 0)
   {
     $BenhNhan = BenhNhan::where('MaBN', $id)->count() != 0 ? BenhNhan::find($id)->MaBN : "";
@@ -77,7 +78,15 @@ class PhieuKhamController extends Controller
     $dsThuoc = Thuoc::all();
     return view("index.phieukhambenh.them", compact('dsBenhNhan', 'dsLoaiBenh', 'dsThuoc', 'SoBNDaKhamTrongNgay', 'SoBNToiDa', 'CanhBao', 'BenhNhan'));
   }
-
+  /**
+   * Lấy giá trị số bệnh nhân tối đa
+   * Kiểm tra số bệnh nhân đã khám trong ngày và số bệnh nhân tối đa
+   * Tạo phiếu khám
+   * Tạo hóa đơn cho phiếu khám với tiền khám từ tham số
+   * Add thuốc kiểm tra số lượng thuốc có đủ hay không và tính thành tiền
+   * Cộng tất cả thành tiền để tính tiền thuốc hóa đơn
+   * 
+   */
   public function postThemPhieuKham(Request $request)
   {
     $errors = new MessageBag();

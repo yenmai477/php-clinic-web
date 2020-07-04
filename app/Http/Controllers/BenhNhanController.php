@@ -11,18 +11,26 @@ use Illuminate\Support\MessageBag;
 
 class BenhNhanController extends Controller
 {
-  //
+  /**
+   * Lấy ra tất cả bệnh nhân
+   */
   public function getDSBenhNhan()
   {
     $dsBenhNhan = BenhNhan::all();
     return view('index.benhnhan.danhsach', compact('dsBenhNhan'));
   }
 
+  /**
+   * Get trang thêm bệnh nhân mới
+   */
   public function getThemBenhNhan()
   {
     return view('index.benhnhan.them');
   }
 
+  /**
+   * Thêm bệnh nhân mới
+   */
   public function postThemBenhNhan(Request $request)
   {
     $messages = [
@@ -71,6 +79,13 @@ class BenhNhanController extends Controller
     }
   }
 
+  /**
+   * Sửa bệnh nhân
+   * 1. Tìm kiếm bệnh nhân với mã id
+   * 2. Nếu không tồn tại bệnh nhân, báo lỗi bệnh nhân không tồn tại
+   * 3. Validate thông tin bệnh nhân mới
+   * 4. Cập nhật thông tin bệnh nhân và save() lại
+   */
   public function postSuaBenhNhan(Request $request, $id)
   {
     $errors = new MessageBag();
@@ -112,7 +127,12 @@ class BenhNhanController extends Controller
       return redirect()->route('sua-benhnhan.get', [$id])->with('success', 'Sửa bệnh nhân thành công.');
     }
   }
-
+  /**
+   * Xóa bệnh nhân
+   * TÌm kiếm bệnh nhân cần xóa nếu không tồn tại báo lỗi
+   * Nếu tồn tại và bệnh nhân đã khám bệnh thông báo không thể xóa bệnh nhân
+   * Nếu tồn tại và chưa khám bệnh tiến hành xóa bệnh nhân và thông báo xóa thành công
+   */
   public function getXoaBenhNhan($id)
   {
     $errors = new MessageBag();
@@ -133,12 +153,23 @@ class BenhNhanController extends Controller
     }
   }
 
+  /**
+   * Get tra cứu bệnh nhân
+   * Đưa tất cả loại bệnh vào để làm điều kiện tra cứu
+   */
   public function getTraCuuBenhNhan()
   {
     $dsLoaiBenh = LoaiBenh::all();
     return view('index.benhnhan.tracuu', compact('dsLoaiBenh'));
   }
 
+  /**
+   * Gọi ajax tra cứu bệnh nhân trả về html để innner
+   * Tìm kiếm theo dữ liệu gửi lên
+   * Nếu không tồn tại thông báo là không có
+   * Nếu có trả về html
+   * 
+   */
   public function getAjaxTraCuuBenhNhan(Request $request)
   {
     if ($request->ajax()) {
