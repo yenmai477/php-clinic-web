@@ -21,7 +21,8 @@
           <li class="breadcrumb-item">
             <a href="/">Trang chủ</a>
           </li>
-          <li class="breadcrumb-item">Thuốc</li>
+          <li class="breadcrumb-item active">Danh mục</li>
+          <li class="breadcrumb-item active"><a href="{{route('ds-thuoc.get')}}">Danh sách thuốc</a></li>
           <li class="breadcrumb-item active">Sửa thuốc</li>
         </ol>
       </div>

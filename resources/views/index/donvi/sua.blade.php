@@ -18,7 +18,8 @@
           <li class="breadcrumb-item">
             <a href="/">Trang chủ</a>
           </li>
-          <li class="breadcrumb-item">Đơn vị</li>
+          <li class="breadcrumb-item active">Danh mục</li>
+          <li class="breadcrumb-item active"><a href="{{route('ds-donvi.get')}}">Danh sách đơn vị</a></li>
           <li class="breadcrumb-item active">Sửa đơn vị</li>
         </ol>
       </div>
