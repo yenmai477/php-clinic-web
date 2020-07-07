@@ -14,7 +14,7 @@
         <ol class="breadcrumb m-0">
           <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
           <li class="breadcrumb-item active">Danh mục</li>
-          <li class="breadcrumb-item active">Nhập thuốc</li>
+          <li class="breadcrumb-item active"><a href="{{route('ds-pnt.get')}}">Nhập thuốc</a></li>
           <li class="breadcrumb-item active">Thêm phiếu nhập thuốc</li>
         </ol>
       </div>
@@ -33,7 +33,7 @@
 </div>
 @endif
 @if (session('success'))
-<div class="alert alert-success">
+<div class=" alert alert-success">
   <strong>Thành công!</strong>
   <button type="button" class="close" data-dismiss="alert">×</button>
   <br />
@@ -55,7 +55,7 @@
   </div>
 </div>
 
-<form class="form-horizontal" role="form" action="{{route('them-pnt.post')}}" method="post">
+<form id="form-datatable" class="form-horizontal" role="form" action="{{route('them-pnt.post')}}" method="post">
   {{ csrf_field() }}
   <div class="row">
     <div class="col-sm-12">
@@ -136,7 +136,7 @@
   //         // alert("Thuốc không đủ dùng")
   // }
   $(document).ready(function() {
-    $('#datatable-responsive').DataTable({
+    var table = $('#datatable-responsive').DataTable({
       "language": {
         "sSearch": "Tìm kiếm: ",
         "sInfo": "Dòng _START_ đến  _END_ trong tổng  _TOTAL_ dòng",
@@ -156,8 +156,10 @@
       //                        "paging":   false,
       "ordering": false,
       //                        "info":     false,
-      "bFilter": true
+      "bFilter": true,
+
     });
+
 
     // $(".soluong").on('change', function () {
     //     var soLuongNhap = $(this).val();

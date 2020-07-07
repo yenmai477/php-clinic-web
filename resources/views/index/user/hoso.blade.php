@@ -61,7 +61,7 @@
 
                   <div class="form-group">
                     <button class="ladda-button btn btn-primary" data-style="expand-right">Lưu lại</button>
-                    <a class="ladda-button btn btn-primary" data-style="expand-right" href="{{route('doimatkhau.get')}}"> Đổi mật khẩu </a>
+                    <a class="ladda-button btn btn-dark" data-style="expand-right" href="{{route('doimatkhau.get')}}"> Đổi mật khẩu </a>
                   </div>
                 </form>
               </div>

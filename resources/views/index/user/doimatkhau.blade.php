@@ -66,7 +66,7 @@
 
 
                   <div class="form-group">
-                    <button class="ladda-button btn btn-primary" data-style="expand-right">Đổi mật khẩu</button>
+                    <button class="ladda-button btn btn-dark" data-style="expand-right">Đổi mật khẩu</button>
                   </div>
                 </form>
               </div>

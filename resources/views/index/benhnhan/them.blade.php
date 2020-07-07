@@ -96,7 +96,7 @@
                   <label class="control-label">Năm sinh</label>
                   <select class="form-control" data-style="btn-default btn-custom" id="namsinh" name="namsinh">
                     <option value="">--- Chọn năm sinh ---</option>
-                    @for($i=2018;$i>=1920;$i--)
+                    @for($i=date("Y") * 1;$i>=date("Y") * 1 - 100;$i--)
                     <option value="{{ $i }}" @if (old('namsinh')==$i) selected @endif>{{ $i }}</option>
                     @endfor
                   </select>
